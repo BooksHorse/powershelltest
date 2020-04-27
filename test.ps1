@@ -22,7 +22,7 @@ mv "youtube-dl.exe" "$PSScriptRoot\temp\youtube-dl.exe"
 #
 
 Expand-Archive -Force -LiteralPath "$PSScriptRoot\temp\7z.zip" -DestinationPath "$PSScriptRoot\temp\7zunzip"
-powershell Start-Process -FilePath "$PSScriptRoot\temp\7zunzip\7za.exe" -ArgumentList "e","$PSScriptRoot\temp\a.7z","-o$PSScriptRoot\temp\mplayer","-y" -wait
+Start-Process -FilePath "$PSScriptRoot\temp\7zunzip\7za.exe" -ArgumentList "e","$PSScriptRoot\temp\a.7z","-o$PSScriptRoot\temp\mplayer","-y" -wait
 Start-Process -FilePath "$PSScriptRoot\temp\7zunzip\7za.exe" -ArgumentList "e","$PSScriptRoot\temp\a.7z","-o$PSScriptRoot\temp\mplayer","-y" -wait
 Start-Sleep -s 10
 Start-Process -FilePath "$PSScriptRoot\temp\youtube-dl.exe" -ArgumentList "https://www.youtube.com/watch?v=DJfg39WkMvE"
