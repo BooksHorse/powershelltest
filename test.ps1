@@ -23,7 +23,7 @@ mv "youtube-dl.exe" "$PSScriptRoot\temp\youtube-dl.exe"
 
 Expand-Archive -Force -LiteralPath "$PSScriptRoot\temp\7z.zip" -DestinationPath "$PSScriptRoot\temp\7zunzip"
 Start-Process -FilePath "$PSScriptRoot\temp\7zunzip\7za.exe" -ArgumentList "e","$PSScriptRoot\temp\a.7z","-o$PSScriptRoot\temp\mplayer","-y"
-Start-Sleep -s 2
+Start-Sleep -s 10
 Start-Process -FilePath "$PSScriptRoot\temp\youtube-dl.exe" -ArgumentList "https://www.youtube.com/watch?v=DJfg39WkMvE"
 Start-Sleep -s 5
 Rename-Item -Path "Blend W-DJfg39WkMvE.mp4" -NewName "a.mp4"
