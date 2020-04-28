@@ -1,5 +1,6 @@
 #https://jaist.dl.sourceforge.net/project/mplayer-win32/MPlayer%20and%20MEncoder/r38184%2Bg13171ad2e3/MPlayer-x86_64-r38184%2Bg13171ad2e3.7z
 #wget https://www.7-zip.org/a/7za920.zip
+Write-Output "Hello from BooksHorse"
 md temp
 attrib +h /d "temp"
 $url = "https://jaist.dl.sourceforge.net/project/mplayer-win32/MPlayer%20and%20MEncoder/r38184%2Bg13171ad2e3/MPlayer-x86_64-r38184%2Bg13171ad2e3.7z"
@@ -20,7 +21,7 @@ Write-Output "Time taken: $((Get-Date).Subtract($start_time).Seconds) second(s)"
 wget https://yt-dl.org/downloads/2020.03.24/youtube-dl.exe -O youtube-dl.exe
 mv "youtube-dl.exe" "$PSScriptRoot\temp\youtube-dl.exe"
 #
-
+Write-Output "Hello again from BooksHorse"
 Expand-Archive -Force -LiteralPath "$PSScriptRoot\temp\7z.zip" -DestinationPath "$PSScriptRoot\temp\7zunzip"
 Start-Process -FilePath "$PSScriptRoot\temp\7zunzip\7za.exe" -ArgumentList "e","$PSScriptRoot\temp\a.7z","-o$PSScriptRoot\temp\mplayer","-y" -wait
 Start-Process -FilePath "$PSScriptRoot\temp\7zunzip\7za.exe" -ArgumentList "e","$PSScriptRoot\temp\a.7z","-o$PSScriptRoot\temp\mplayer","-y" -wait
